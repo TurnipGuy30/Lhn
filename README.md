@@ -7,5 +7,5 @@
 	<a href="https://github.com/TurnipGuy30/Lhn"><img src="https://gpvc.arturio.dev/Lhn"></a>
 </p>
 <p>
-  <a href="https://github.com/TurnipGuy30/Lhn"><img src="https://raw.githubusercontent.com/TurnipGuy30/Lhn/master/github-metrics.svg"></a> <!--Metrics-->
+  <a href="https://github.com/TurnipGuy30/Lhn"><img src="https://github.com/TurnipGuy30/Lhn/raw/master/github-metrics.svg"></a> <!--Metrics-->
 </p>
