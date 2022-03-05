@@ -1,0 +1,9 @@
+#page {
+	background-color: rgb(32, 32, 32);
+	height: 100%;
+	color: rgb(255, 255, 255);
+	padding: 7%;
+}
+#page a {
+	color: rgb(0, 255, 0);
+}
