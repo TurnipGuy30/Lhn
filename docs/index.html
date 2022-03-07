@@ -1,49 +1,101 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 
+<!--Head-->
+
 <head>
+
+	<!--Meta-->
+
 	<meta charset="utf-8">
-	<title>Lh(n) | Home</title>
+	<title id="title"></title>
 	<link rel="icon" href="../logo.png">
+
+	<!--Style-->
+
 	<style>
-		@import url(styles/index.css);
+		a {
+			cursor: pointer;
+		}
+		body {
+			background-color: rgb(32, 32, 32) !important;
+		}
+		#page a, code, navbar-brand {
+			color: rgb(0, 255, 0) !important;
+		}
+		#page {
+			padding-top: 5%;
+			padding-bottom: 5%;
+			color: rgb(255, 255, 255);
+		}
 	</style>
-	<style>
-		@import url(styles/bootstrap.css);
-	</style>
-	<script type="text/javascript" src="scripts/index.js"></script>
-	<script type="text/javascript" src="scripts/bootstrap.js"></script>
+	
+	<!--Script-->
+
+	<script type="text/javascript">
+		const pages = {
+			"Homepage": "<p>WIP</p>",
+			"Docs": "<p>WIP</p>"
+		};
+		function changePage(page) {
+			document.getElementById("page").innerHTML = "<div align='center'><img src='../logo.png' width='10%'><h1><code>" + page + "</code></h1><hr>" + pages[page];
+			document.getElementById("title").innerHTML = "Lh(n) | " + page;
+			document.getElementById("nav-" + currentPage.toLowerCase()).classList = [
+				"nav-link"
+			];
+			document.getElementById("nav-" + page.toLowerCase()).classList = [
+				"nav-link",
+				"active"
+			];
+			currentPage = page;
+		};
+	</script>
+
+	<!--Bootstrap-->
+
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/latest/css/bootstrap.min.css">
+	
+	<!-- Latest compiled JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/latest/js/bootstrap.min.js"></script>
+
 </head>
 
-<body>
+<!--Body-->
+
+<body onload="changePage('Homepage'); var currentPage = 'Homepage'">
+
+	<!--Navbar-->
+
 	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
 		<div class="container">
-			<a class="navbar-brand" href="#">Lh(n)</a>
+			<a class="navbar-brand" onclick="changePage('Homepage');">Lh(n)</a>
 			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" aria-expanded="false">
 				<span class="navbar-toggler-icon"></span>
 			</button>
 			<div class="collapse navbar-collapse" id="navbarsExample07">
 				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
 					<li class="nav-item">
-						<a class="nav-link active" aria-current="page" href="#">Home</a>
+						<a id="nav-Homepage" class="nav-link" onclick="changePage('Homepage');">Homepage</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link disabled">Docs</a>
+						<a id="nav-docs" class="nav-link" onclick="changePage('Docs');">Docs</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="https://dsc.gg/lhn" target="_blank" rel="noopener noreferrer">Invite</a>
+						<a class="nav-link" href="https://dsc.gg/lhn" target="_blank" rel="noopener noreferrer"">Invite</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="https://github.com/TurnipGuy30/Lhn" target="_blank"
-							rel="noopener noreferrer">Repository</a>
+						<a class="nav-link" href="https://github.com/TurnipGuy30/Lhn" target="_blank" rel="noopener noreferrer"">Repository</a>
 					</li>
 				</ul>
 			</div>
 		</div>
 	</nav>
-	<div id="page">
-		<p>WIP</p>
-	</div>
+
+	<!--Page-->
+
+	<div class="container" id="page"></div>
+
 </body>
 
 </html>
